@@ -120,7 +120,7 @@ class Router {
     Handler handler = (route != null ? route.handler : notFoundHandler);
     var transition = transitionType;
     if (transitionType == null) {
-      transition = route != null ? route.transitionType : TransitionType.native;
+      transition = route?.transitionType != null ? route.transitionType : TransitionType.native;
     }
     if (route == null && notFoundHandler == null) {
       return RouteMatch(
